@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TensorSync Systems</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <h1>TensorSync Systems</h1>
+        <nav>
+          <ul id="nav-list">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#team">Team</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+          <div class="menu-toggle" id="mobile-menu">
+            <i class="fas fa-bars"></i>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <section id="home">
+      <div class="overlay">
+        <div class="container">
+          <h2>Welcome to TensorSync Systems</h2>
+          <p>
+            We offer cutting-edge AI/ML solutions, WhatsApp chatbot services,
+            and development operations setup.
+          </p>
+          <a href="#services" class="btn">Our Services</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <h2>About Us</h2>
+        <p>
+          TensorSync Systems is dedicated to providing innovative technology solutions
+          to help businesses achieve their goals. Our team of experts
+          specializes in AI/ML, chatbot services, and development operations.
+        </p>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="container">
+        <h2>Our Services</h2>
+        <div class="service">
+          <h3>AI/ML Solutions</h3>
+          <p>
+            We provide advanced AI and machine learning solutions to help your
+            business grow.
+          </p>
+        </div>
+        <div class="service">
+          <h3>WhatsApp Chatbot Service</h3>
+          <p>
+            Enhance customer engagement with our customized WhatsApp chatbots.
+          </p>
+        </div>
+        <div class="service">
+          <h3>Development Operations Setup</h3>
+          <p>
+            Streamline your development operations with our expert setup and
+            support services.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="team">
+      <div class="container">
+        <h2>Our Team</h2>
+        <div class="team-members">
+          <div class="team-member">
+            <img src="assets/manuj.jpg" alt="Manuj Mehrotra" />
+            <h3>Manuj Mehrotra</h3>
+            <p>Senior NLP Engineer</p>
+          </div>
+          <div class="team-member">
+            <img src="assets/namit.jpg" alt="Namit Saraswat" />
+            <h3>Namit Saraswat</h3>
+            <p>Software Engineer</p>
+          </div>
+          <div class="team-member">
+            <img src="assets/kmg.jpg" alt="Kaustubh Mani Gaur" />
+            <h3>Kaustubh Mani Gaur</h3>
+            <p>Lead Developer</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <h2>Contact Us</h2>
+        <form action="send_email.php" method="post">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required />
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required />
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" required></textarea>
+          <button type="submit">Submit</button>
+        </form>
+        <div class="contact-details">
+          <p>
+            Email:
+            <a href="namit.and.saraswat@gmail.com"
+              >namit.and.saraswat@gmail.com</a
+            >
+          </p>
+          <p>Phone: +1 (555) 123-4567</p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <p>&copy; 2024 TensorSync Systems. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <!-- <a href="https://wa.me/8115097891" class="whatsapp-float" target="_blank">
+      <img src="" alt="WhatsApp">
+    </a> -->
+
+    <script>
+      const mobileMenu = document.getElementById("mobile-menu");
+      const navList = document.getElementById("nav-list");
+
+      mobileMenu.addEventListener("click", () => {
+        navList.classList.toggle("active");
+      });
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const sections = document.querySelectorAll("section");
+
+        const options = {
+          threshold: 0.5,
+        };
+
+        const observer = new IntersectionObserver(function (entries, observer) {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("in-view");
+              observer.unobserve(entry.target);
+            }
+          });
+        }, options);
+
+        sections.forEach((section) => {
+          observer.observe(section);
+        });
+      });
+
+      var url =
+        "https://wati-integration-prod-service.clare.ai/v2/watiWidget.js?61437";
+      var s = document.createElement("script");
+      s.type = "text/javascript";
+      s.async = true;
+      s.src = url;
+      var options = {
+        enabled: true,
+        chatButtonSetting: {
+          backgroundColor: "#00e785",
+          ctaText: "Chat with us",
+          borderRadius: "25",
+          marginLeft: "0",
+          marginRight: "20",
+          marginBottom: "20",
+          ctaIconWATI: false,
+          position: "right",
+        },
+        brandSetting: {
+          brandName: "TensorSync Systems",
+          brandSubTitle: "undefined",
+          brandImg:
+            "https://www.wati.io/wp-content/uploads/2023/04/Wati-logo.svg",
+          welcomeText: "Hi there!\nHow can I help you?",
+          messageText: "Hello, %0A I have a question about {{page_link}}",
+          backgroundColor: "#00e785",
+          ctaText: "Chat with us",
+          borderRadius: "25",
+          autoShow: false,
+          phoneNumber: "918115097891",
+        },
+      };
+      s.onload = function () {
+        CreateWhatsappChatWidget(options);
+      };
+      var x = document.getElementsByTagName("script")[0];
+      x.parentNode.insertBefore(s, x);
+    </script>
+  </body>
+</html>
