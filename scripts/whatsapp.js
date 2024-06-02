@@ -188,7 +188,7 @@ async function CreateWhatsappChatWidget(
                     <svg width="8" height="15" viewBox="0 0 8 15" fill="none" xmlns="http://www.w3.org/2000/svg" style="display: block">
                       <path d="M3 15V9H0L5 0V6H8L3 15Z" fill="#999999" />
                     </svg>
-                    Powered by target="_blank" class="wa-chat-box-poweredby-link">TensorSync Systems</a>
+                    Powered by target="_blank" class="wa-chat-box-poweredby-link">TensorLab</a>
                 </div>
             </div>
             `
